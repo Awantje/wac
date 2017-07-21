@@ -78,6 +78,8 @@ function loadcountries(){
 		console.log(landen);
 		console.log(landen[0]);
 		console.log(landen[0].Naam);
+		var countries = $("#Countries");
+		countries.append("<tbody>");
 		$.each(landen, function(i, item){
 			var naam = "<td>"+landen[i].Naam+"</td>";
 			var hoofdstad = "<td>"+landen[i].Capital+"</td>";
@@ -85,9 +87,9 @@ function loadcountries(){
 			var oppervlakte = "<td>"+landen[i].Surface+"</td>";
 			var inwoners = "<td>"+landen[i].Population+"</td>";
 			var string = "<tr id="+landen[i].Lat+","+landen[i].lng+","+landen[i].Capital+">"+naam+hoofdstad+regio+oppervlakte+inwoners+"<button type=\"button\">verwijder</button>"+"</tr>";
-			$("#Countries").append(string)});
-			
+			countries.append(string)});
 		});
+		countries.append("</tbody>");
 	
 }
 

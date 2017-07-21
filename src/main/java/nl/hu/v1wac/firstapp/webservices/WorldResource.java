@@ -8,7 +8,11 @@ import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
 import javax.json.JsonObjectBuilder;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -123,5 +127,30 @@ public class WorldResource {
 		jab.add(job);}
 		JsonArray array = jab.build();
 		return array.toString();
+	}
+	@DELETE
+	@Path("/deleteland")
+	@Consumes("application/json")
+	public boolean deleteCountryByCode(Country country){
+		WorldService service = ServiceProvider.getWorldService();
+		return service.deleteCountryByCode(country);
+	}
+	@PUT
+	@Path("/updateland")
+	@Produces("application/json")
+	@Consumes("application/json")
+	public Country updateCountry(Country country){
+		WorldService service = ServiceProvider.getWorldService();
+		String code = country.getCode();
+		service.updateCountry(country);
+		return service.getCountryByCode(code);
+	}
+	@POST
+	@Path("/addland")
+	@Produces("application/json")
+	@Consumes("application/json")
+	public Country addCountry(Country country){
+		WorldService service = ServiceProvider.getWorldService();
+		return service.saveCountry(country);
 	}
 }

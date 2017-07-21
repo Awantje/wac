@@ -1,25 +1,35 @@
 	body {
-    background-color: Teal;
+    background-color: silver;
+	font-family: 'Roboto';
+	color:	#686868;
 }
 div{
 	float: left;
 	width: 100%;
-	background-color: DarkOliveGreen  ;
+	background-color: lightgray  ; 
+	font-weight: normal;
+    text-transform: none;
+	color:	#686868;
+	padding: 2;
 }
-	
+th {
+	text-align : justify;
+	color:	#282828;
+}
 td {
     width: 5em;
     line-height: 2em;
-    background-color: #555;
-    font-weight: bold;
+    background-color: #DDDDDD;
+    /*font-weight: bold;*/
     margin: auto;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 tr:hover td {
-    background-color: #FFF;
-    cursor: crosshair;
-    
-    
+    background-color: silver;
+	color:	#282828;
 }
 
 .inner{
@@ -33,32 +43,50 @@ tr:hover td {
         width: 50%;}
     #countrylist{
     float:left;}
-    #weatherInfo{
-    float:left;}
+    #myLocation, #weatherInfo{
+		display:inline-block;
+		width : 48%;
+    /*float:left;*/}
 }
 #frame{
-	border: 3px solid green;
+	border: 3px solid silver;
     padding: 10px;
-    width: 25%;
-    background-color: green;
+    /*width: 25%;*/
+	
+    width: 92%; 
+	
+    background-color: silver;
 }
 #countrylist{
-	border: 3px solid green;
+	border: 3px solid silver;
     padding: 10px;
-    width: 25%;
-    background-color: green;
+    /*width: 25%;*/
+	
+    background-color: silver;
     float:left;
+	overflow-x:auto;
+	white-space: nowrap; 
+	font-weight: bold;
+    text-transform: uppercase;
+	color:	#282828;
+	background-color: lightgray  ; 
 }
 #weatherInfo{
-    width: 25%;
-    border: 3px solid green;
+    /*width: 25%;*/
+    border: 3px solid silver;
     padding: 10px;
-     background-color: green;
-     float:left;
+     background-color: silver;
+     float:left; 
+	font-weight: bold;
+    text-transform: uppercase;
+	color:	#282828;
 }
 #myLocation{
-    width: 25%;
-    border: 3px solid green;
+    /*width: 25%;*/
+    border: 3px solid silver;
     padding: 10px;
-    background-color: green;
+    background-color: silver;    
+	font-weight: bold;
+    text-transform: uppercase;
+	color:	#282828;
 }

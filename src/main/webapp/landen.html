@@ -1,21 +1,116 @@
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
 <link rel="stylesheet" type="text/css" href="mystylesheet.css">
+<link rel="stylesheet" type="text/css" href="filter.css">
 <body>
 	<div id="frame">
-		<div id="countrylist">
-			Landen <input type="text" id="myInput" onkeyup="myFunction()"
-				placeholder="Zoeken">
-			<table id="Countries" class=table>
-				<tr>
-					<th>Land</th>
-					<th>hoofdstad</th>
-					<th>regio</th>
-					<th>delete</th>
-				</tr>
-			</table>
+		<div id="myLocation">
+			Geselecteerd land
+			<div id="landcode">
+				<label for="Landcode" id="countrycode">Landcode: </label>
+			</div>
+			<div id="ISO3">
+				<label for="ISO3" id="iso3code">ISO3Code: </label>
+			</div>
+			<div id="Naam">
+				<label for="Naam" id="country">Landnaam: </label>
+			</div>
+			<div id="Cont">
+				<label for="Cont" id="continent">Continent: </label>
+			</div>
+			<div id="stad">
+				<label for="stad" id="city">Stad: </label>
+			</div>
+			<div id="regio">
+				<label for="regio" id="regionname">Regio: </label>
+			</div>
+			<div id="surface">
+				<label for="surface" id="oppervlakte">Oppervlakte:</label>
+			</div>
+			<div id="Population">
+				<label for="Population" id="inwoners">Inwoners:</label>
+			</div>
+			<div id="Government">
+				<label for="Government" id="overheid">overheid: </label>
+			</div>
+			<div id="latitude">
+				<label for="latitude" id="lat">Latitude: </label>
+			</div>
+			<div id="longtitude">
+				<label for="longtitude" id="long">Longtitude: </label>
+			</div>
+			<div>
+				<button id="edit">Edit</button>
+			</div>
+
 		</div>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
-	<script src="/firstapp/les8.js"></script>
+		<div id="weatherInfo">
+			Nieuw land
+			<div id="landcode">
+				<label for="Landcode" id="countrycode">Landcode: </label>
+				<textarea rows="1" cols="50" id="CODEN"></textarea>
+			</div>
+			<div id="ISO3">
+				<label for="ISO3" id="iso3code">ISO3Code: </label>
+				<textarea rows="1" cols="50" id="ISO3N"></textarea>
+			</div>
+			<div id="Naam">
+				<label for="Naam" id="country">Landnaam: </label>
+				<textarea rows="1" cols="50" id="NAAMN"></textarea>
+			</div>
+			<div id="Cont">
+				<label for="Cont" id="continent">Continent: </label>
+				<textarea rows="1" cols="50" id="CONTN"></textarea>
+			</div>
+			<div id="stad">
+				<label for="stad" id="city">Stad: </label>
+				<textarea rows="1" cols="50" id="STADN"></textarea>
+			</div>
+			<div id="regio">
+				<label for="regio" id="regionname">Regio: </label>
+				<textarea rows="1" cols="50" id="REGION"></textarea>
+			</div>
+			<div id="surface">
+				<label for="surface" id="oppervlakte">Oppervlakte:</label>
+				<textarea rows="1" cols="50" id="OPPN"></textarea>
+			</div>
+			<div id="Population">
+				<label for="Population" id="inwoners">Inwoners:</label>
+				<textarea rows="1" cols="50" id="INWN"></textarea>
+			</div>
+			<div id="Government">
+				<label for="Government" id="overheid">overheid: </label>
+				<textarea rows="1" cols="50" id="OVERN"></textarea>
+			</div>
+			<div id="latitude">
+				<label for="latitude" id="lat">Latitude: </label>
+				<textarea rows="1" cols="50" id="LATN"></textarea>
+			</div>
+			<div id="longtitude">
+				<label for="longtitude" id="long">Longtitude: </label>
+				<textarea rows="1" cols="50" id="LONGN"></textarea>
+			</div>
+			<div>
+				<button id="nieuw">Nieuw</button>
+			</div>
+</div>
+
+			<div id="countrylist">
+				Beschikbare vakantiebestemmingen <input type="text" id="zoeken"
+					onkeyup="filter()" placeholder="Zoeken en filteren...">
+				<table id="Countries" class=table>
+					<thead>
+						<tr>
+							<th>Land</th>
+							<th>hoofdstad</th>
+							<th>regio</th>
+					</thead>
+				</table>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+		<script src="/firstapp/les8.js"></script>
+		<script src="/firstapp/sort.js"></script>
+		<script src="/firstapp/filter.js"></script>
 </body>
 </head>
