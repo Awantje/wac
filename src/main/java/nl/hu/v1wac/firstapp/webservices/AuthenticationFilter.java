@@ -14,7 +14,7 @@ import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 
 @Provider
-
+//@Priority(Priorities.AUTHENTICATION)
 public class AuthenticationFilter implements ContainerRequestFilter {
  @Override
  public void filter(ContainerRequestContext requestCtx) throws IOException {
