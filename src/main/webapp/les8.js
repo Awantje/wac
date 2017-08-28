@@ -75,7 +75,7 @@ function editcountry(){
 	var Populationn = $("#INW").val();
 	var Governmentn = $("#OVER").val();
 	var Latituden = $("#LAT").val();
-	var longtituden = $("#LONG").value;
+	var longtituden = $("#LONG").val();
 	var country = {Code: codetn , Iso3 : iso3n , Naam : Naamnd , Continent : Contn , Capital : Stadn , Region : Region , Surface :Surfacen, Population :Populationn, Government : Governmentn , Lat :Latituden, lng :longtituden}
 	console.log(country);
 	edit(country);
