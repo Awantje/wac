@@ -1,7 +1,7 @@
 loadcountries();
 
 function loadcountries() {
-	$.get("http://localhost:4711/firstapp/restservices/countries", function(
+	$.get("/restservices/countries", function(
 			landen) {
 		console.log(landen);
 		console.log(landen[0]);
@@ -23,7 +23,7 @@ function loadcountries() {
 }
 
 function editCountry(code) {
-	uri = "http://localhost:4711/firstapp/restservices/countries/"+code;
+	uri = "/restservices/countries/"+code;
 		$.get(uri, function(data){
 		console.log("Editcountrycode");
 		console.log(code);
@@ -82,7 +82,7 @@ function editcountry(){
 }
 	function edit(country) {
 		$.ajax({
-			url : 'http://localhost:4711/firstapp/restservices/countries/updateland',
+			url : '/countries/updateland',
 			type : 'PUT',
 			data : JSON.stringify(country),
 			contentType: "application/json",
@@ -95,7 +95,7 @@ function editcountry(){
 	}
 	$.ajax({
 		type : "DELETE",
-		url : "http://localhost:4711/firstapp/restservices/countries/deleteland",
+		url : "/countries/deleteland",
 		data : JSON.stringify(country),
 		contentType: "application/json;",
 		success : function(msg) {
@@ -104,7 +104,7 @@ function editcountry(){
 	});
 	function add(country) {
 		$.ajax({
-			url : 'http://localhost:4711/firstapp/restservices/countries/addland',
+			url : '/countries/addland',
 			type : 'POST',
 			data : JSON.stringify(country),
 			contentType: "application/json;",
@@ -114,7 +114,7 @@ function editcountry(){
 		});
 	}
 	function getLandByCode(code) {
-		$.get("http://localhost:4711/firstapp/restservices/countries/" + code);
+		$.get("/restservices/countries/" + code);
 	}
 
 	document.getElementById("nieuw").onclick = nieuwcountry;
