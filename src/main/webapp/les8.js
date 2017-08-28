@@ -47,18 +47,18 @@ function editCountry(code) {
 	});
 
 function nieuwcountry(){
-	console.log("nieuwcountry")
-	var codetn = $("textarea#Landcode").text;
-	var iso3n = $("textarea#ISO3").text;
-	var Naamnd = $("textarea#Naam").text;
-	var Contn = $("#Cont").text;
-	var Stadn = $("#Stad").text;
-	var Region = $("#regio").text;
-	var Surfacen = $("#surface").text;
-	var Populationn = $("#Population").text;
-	var Governmentn = $("#Government").text;
-	var Latituden = $("#Latitude").text;
-	var longtituden = $("#Longtitude").text;
+	console.log("nieuwcountryn")
+	var codetn = $("Landcoden").value;
+	var iso3n = $("textarea#ISO3n").value;
+	var Naamnd = $("textarea#Naamn").value;
+	var Contn = $("#Contn").value;
+	var Stadn = $("#Stadn").value;
+	var Region = $("#region").value;
+	var Surfacen = $("#surfacen").value;
+	var Populationn = $("#Populationn").value;
+	var Governmentn = $("#Government").value;
+	var Latituden = $("#Latituden").value;
+	var longtituden = $("#Longtituden").value;
 	var country = {Code: codetn , Iso3 : iso3n , Naam : Naamnd , Continent : Contn , Capital : Stadn , Region : Region , Surface :Surfacen, Population :Populationn, Government : Governmentn , Lat :Latituden, lng :longtituden}
 	console.log(country);
 	add(country);
