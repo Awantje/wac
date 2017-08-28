@@ -48,17 +48,17 @@ function editCountry(code) {
 
 function nieuwcountry(){
 	console.log("nieuwcountry")
-	var codetn = $("CODEN").val();
-	var iso3n = $("ISO3N").val();
-	var Naamnd = $("NAAMN").val();
+	var codetn = $("#CODEN").val();
+	var iso3n = $("#ISO3N").val();
+	var Naamnd = $("#NAAMN").val();
 	var Contn = $("#CONTN").val();
 	var Stadn = $("#STADN").val();
 	var Region = $("#REGION").val();
-	var Surfacen = $("#OPPN").value;
-	var Populationn = $("#INWN").value;
-	var Governmentn = $("#OVERN").value;
-	var Latituden = $("#LATN").value;
-	var longtituden = $("#LONGN").value;
+	var Surfacen = $("#OPPN").val();
+	var Populationn = $("#INWN").val();
+	var Governmentn = $("#OVERN").val();
+	var Latituden = $("#LATN").val();
+	var longtituden = $("#LONGN").val();
 	var country = {Code: codetn , Iso3 : iso3n , Naam : Naamnd , Continent : Contn , Capital : Stadn , Region : Region , Surface :Surfacen, Population :Populationn, Government : Governmentn , Lat :Latituden, lng :longtituden}
 	console.log(country);
 	add(country);
