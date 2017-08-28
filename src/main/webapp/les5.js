@@ -74,7 +74,7 @@ function showWeather(lat, lon, city){
 	console.log(Second);}
 }
 function loadcountries(){
-	$.get("http://localhost:4711/firstapp/restservices/countries", function(landen){
+	$.get("/restservices/countries", function(landen){
 		console.log(landen);
 		console.log(landen[0]);
 		console.log(landen[0].Naam);
