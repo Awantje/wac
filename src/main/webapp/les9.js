@@ -48,7 +48,7 @@ function editCountry(code) {
 
 function nieuwcountry(){
 	console.log("nieuwcountry")
-	var codetn = $("#Landcode").value;
+	var codetn = $("#Landcode").attr('value');
 	var iso3n = $("#ISO3").value;
 	var Naamnd = $("#Naam").value;
 	var Contn = $("#Cont").value;
