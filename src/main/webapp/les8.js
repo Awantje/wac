@@ -65,8 +65,8 @@ function nieuwcountry(){
 }
 function editcountry(){
 	console.log("editcountry")
-	var codetn = $("#Landcode").text;
-	var iso3n = $("#ISO3").text;
+	var codetn = $("Landcode").val();
+	var iso3n = $("ISO3").value;
 	var Naamnd = $("#Naam").text;
 	var Contn = $("#Cont").text;
 	var Stadn = $("#Stad").text;
