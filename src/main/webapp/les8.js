@@ -48,9 +48,9 @@ function editCountry(code) {
 
 function nieuwcountry(){
 	console.log("nieuwcountry")
-	var codetn = document.getElementById("Landcode").value;
-	var iso3n = $("#ISO3").value;
-	var Naamnd = $("#Naam").value;
+	var codetn = $("textarea#Landcode").value;
+	var iso3n = $("textarea#ISO3").value;
+	var Naamnd = $("textarea#Naam").value;
 	var Contn = $("#Cont").value;
 	var Stadn = $("#Stad").value;
 	var Region = $("#regio").value;;
