@@ -29,17 +29,17 @@ function editCountry(code) {
 		console.log(code);
 		console.log(data);
 		console.log(uri);
-	$("#Landcode").html("<label for=\"Landcode\" id=\"countrycode\">Landcode: "+code+"</label>");
-	$("#ISO3").html("<label for=\"ISO3\" id=\"countrycode\">ISO3Code: "+data[0].Iso3+"</label>");
-	$("#Naam").html("<label for=\"Naam\" id=\"landnaam\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwlandnaam\">"+data[0].Naam+"</textarea>");
-	$("#Cont").html("<label for=\"Cont\" id=\"countrycode\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwcontinent\">"+data[0].Continent+"</textarea>");
-	$("#stad").html("<label for=\"Stad\" id=\"countrycode\">Stad: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwcapi\">"+data[0].Capital+"</textarea>");
-	$("#regio").html("<label for=\"regio\" id=\"countrycode\">Regio: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwregion\">"+data[0].Region+"</textarea>");
-	$("#surface").html("<label for=\"surface\" id=\"countrycode\">Oppervlakte: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwsurface\">"+data[0].Surface+"</textarea>");
-	$("#Population").html("<label for=\"Population\" id=\"countrycode\">Inwoners: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwpop\">"+data[0].Population+"</textarea>");
-	$("#Government").html("<label for=\"Government\" id=\"countrycode\">Overheid: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwgov\">"+data[0].Government+"</textarea>");
-	$("#latitude").html("<label for=\"Latitude\" id=\"countrycode\">Latitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwlat\">"+data[0].Lat+"</textarea>");
-	$("#longtitude").html("<label for=\"Longtitude\" id=\"countrycode\">Longtitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwlng\">"+data[0].lng+"</textarea>");}
+	$("#Landcode").html("<label for=\"Landcode\" id=\"CODE\">Landcode: "+code+"</label>");
+	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3\">ISO3Code: "+data[0].Iso3+"</label>");
+	$("#Naam").html("<label for=\"Naam\" id=\"NAAM\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwlandnaam\">"+data[0].Naam+"</textarea>");
+	$("#Cont").html("<label for=\"Cont\" id=\"CONT\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwcontinent\">"+data[0].Continent+"</textarea>");
+	$("#stad").html("<label for=\"Stad\" id=\"STAD\">Stad: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwcapi\">"+data[0].Capital+"</textarea>");
+	$("#regio").html("<label for=\"regio\" id=\"REGIO\">Regio: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwregion\">"+data[0].Region+"</textarea>");
+	$("#surface").html("<label for=\"surface\" id=\"OPP\">Oppervlakte: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwsurface\">"+data[0].Surface+"</textarea>");
+	$("#Population").html("<label for=\"Population\" id=\"INW\">Inwoners: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwpop\">"+data[0].Population+"</textarea>");
+	$("#Government").html("<label for=\"Government\" id=\"OVER\">Overheid: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwgov\">"+data[0].Government+"</textarea>");
+	$("#latitude").html("<label for=\"Latitude\" id=\"LAT\">Latitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwlat\">"+data[0].Lat+"</textarea>");
+	$("#longtitude").html("<label for=\"Longtitude\" id=\"LONG\">Longtitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwlng\">"+data[0].lng+"</textarea>");}
 	);};
 	
 	$("body").on('click', 'tr', function(){
@@ -65,17 +65,17 @@ function nieuwcountry(){
 }
 function editcountry(){
 	console.log("editcountry")
-	var codetn = $("Landcode").val();
+	var codetn = $("CODE").val();
 	var iso3n = $("ISO3").value;
-	var Naamnd = $("#Naam").text;
-	var Contn = $("#Cont").text;
-	var Stadn = $("#Stad").text;
-	var Region = $("#regio").text;
-	var Surfacen = $("#surface").text;
-	var Populationn = $("#Population").text;
-	var Governmentn = $("#Government").text;
-	var Latituden = $("#Latitude").text;
-	var longtituden = $("#Longtitude").text;
+	var Naamnd = $("#NAAM").text;
+	var Contn = $("#CONT").text;
+	var Stadn = $("#STAD").text;
+	var Region = $("#REGIO").text;
+	var Surfacen = $("#OPP").text;
+	var Populationn = $("#INW").text;
+	var Governmentn = $("#OVER").text;
+	var Latituden = $("#LAT").text;
+	var longtituden = $("#LONG").text;
 	var country = {Code: codetn , Iso3 : iso3n , Naam : Naamnd , Continent : Contn , Capital : Stadn , Region : Region , Surface :Surfacen, Population :Populationn, Government : Governmentn , Lat :Latituden, lng :longtituden}
 	console.log(country);
 	edit(country);
