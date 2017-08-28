@@ -47,13 +47,13 @@ function editCountry(code) {
 	});
 
 function nieuwcountry(){
-	console.log("nieuwcountryn")
-	var codetn = $("CODEN").value;
-	var iso3n = $("ISO3N").value;
-	var Naamnd = $("NAAMN").value;
-	var Contn = $("#CONTN").value;
-	var Stadn = $("#STADN").value;
-	var Region = $("#REGION").value;
+	console.log("nieuwcountry")
+	var codetn = $("CODEN").val();
+	var iso3n = $("ISO3N").val();
+	var Naamnd = $("NAAMN").val();
+	var Contn = $("#CONTN").val();
+	var Stadn = $("#STADN").val();
+	var Region = $("#REGION").val();
 	var Surfacen = $("#OPPN").value;
 	var Populationn = $("#INWN").value;
 	var Governmentn = $("#OVERN").value;
