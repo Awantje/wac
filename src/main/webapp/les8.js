@@ -29,7 +29,7 @@ function editCountry(code) {
 		console.log(code);
 		console.log(data);
 		console.log(uri);
-	$("#Landcode").html("<label for=\"Landcode\" id=\"CODE\">Landcode: "+code+"</label>");
+	$("#Landcode").html("<label for=\"Landcode\" id=\"CODE\">Landcode: "+data[0].code+"</label>");
 	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3\">ISO3Code: "+data[0].Iso3+"</label>");
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAM\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwlandnaam\">"+data[0].Naam+"</textarea>");
 	$("#Cont").html("<label for=\"Cont\" id=\"CONT\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Nieuwcontinent\">"+data[0].Continent+"</textarea>");
@@ -65,8 +65,8 @@ function nieuwcountry(){
 }
 function editcountry(){
 	console.log("editcountry")
-	var codetn = $("CODE").val();
-	var iso3n = $("ISO3").val();
+	var codetn = $("countrycode").val();
+	var iso3n = $("iso3code").val();
 	var Naamnd = $("#NAAM").val();
 	var Contn = $("#CONT").val();
 	var Stadn = $("#STAD").val();
