@@ -29,8 +29,8 @@ function editCountry(code) {
 		console.log(code);
 		console.log(data);
 		console.log(uri);
-	$("#Landcode").html("<label for=\"Code\" id=\"countrycode\">Landcode: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandcode\">"+data[0].Code+"</textarea>");
-	$("#ISO3").html("<label for=\"Code\" id=\"iso3code\">iso3code: </label><textarea rows=\"1\" cols=\"50\" id=\"Editisocode\">"+data[0].Iso3+"</textarea>");
+	$("#Landcode").html("<label for=\"Landcode\" id=\"CODE\">Landcode: "+data[0].Code+"</label>");
+	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3\">ISO3Code: "+data[0].Iso3+"</label>");
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAM\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+data[0].Naam+"</textarea>");
 	$("#Cont").html("<label for=\"Cont\" id=\"CONT\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Editcontinent\">"+data[0].Continent+"</textarea>");
 	$("#stad").html("<label for=\"Stad\" id=\"STAD\">Stad: </label><textarea rows=\"1\" cols=\"50\" id=\"Editcapi\">"+data[0].Capital+"</textarea>");
