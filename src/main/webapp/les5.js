@@ -1,7 +1,7 @@
 initpage()
 var appid = "66c11be2f15c518c5a8567f29c6b202d"
 function initpage(){
-	$.get("https://ip-api.com/json", function(data) {
+	$.get("http://ip-api.com/json", function(data) {
 		console.log(data);
 		stad = data.city;
 		lat = data.lat;
@@ -26,7 +26,7 @@ function showWeather(lat, lon, city){
 	stad = city;
 	stadn = localStorage.getItem("stad")
 	if (( Math.floor((new Date() - Second)/60000)> 10) || (stad !==  stadn)){
-		var uri = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&APPID="+appid;
+		var uri = "http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&APPID="+appid;
 		$.get(uri, function(reply){
 			console.log(reply);
 			console.log(reply.main);
@@ -74,7 +74,7 @@ function showWeather(lat, lon, city){
 	console.log(Second);}
 }
 function loadcountries(){
-	$.get("https://localhost:4711/firstapp/restservices/countries", function(landen){
+	$.get("http://localhost:4711/firstapp/restservices/countries", function(landen){
 		console.log(landen);
 		console.log(landen[0]);
 		console.log(landen[0].Naam);
