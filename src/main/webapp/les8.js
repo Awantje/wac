@@ -99,17 +99,17 @@ function editcountry(){
 			}
 		});
 	}
-	function remove(country) {
-	}
-	$.ajax({
-		type : "DELETE",
-		url : "/countries/deleteland",
-		data : JSON.stringify(country),
-		contentType: "application/json;",
-		success : function(msg) {
-			console.log("Data Deleted: ");
-		}
-	});
+	//function remove(country) {
+	//}
+	//$.ajax({
+		//type : "DELETE",
+		//url : "/countries/deleteland",
+		//data : JSON.stringify(country),
+		//contentType: "application/json;",
+		//success : function(msg) {
+			//console.log("Data Deleted: ");
+		//}
+	//});
 	function add(country) {
 		$.ajax({
 			url : '/countries/addland',
