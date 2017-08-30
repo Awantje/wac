@@ -53,7 +53,7 @@ function nieuwcountry(){
 	var codetn = $("#CODEN").val();
 	var iso3n = $("#ISO3N").val();
 	var Naamn = $("#NAAMN").val();
-	var Contn = $("#CONTN").val();
+	var Contn = $("#CONTN").text();
 	var Stadn = $("#STADN").val();
 	var Region = $("#REGION").val();
 	var Surfacen = $("#OPPN").val();
