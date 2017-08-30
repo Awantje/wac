@@ -26,11 +26,12 @@ function editCountry(code) {
 	uri = "/restservices/countries/"+code;
 		$.get(uri, function(data){
 		console.log("Editcountrycode");
-		console.log(Iso3);
+		console.log(data[0].iso3);
+		console.log(data[0].code);
 		console.log(data);
 		console.log(uri);
 	$("#Landcode").html("<label for=\"Landcode\" id=\"CODEE\">Landcode: "+data[0].code+"</label>");
-	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3E\">ISO3Code: "+data[0].Iso3+"</label>");
+	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3E\">ISO3Code: "+data[0].iso3+"</label>");
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAME\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+"</textarea>");
 	$("#Editlandnaam").text(data[0].Naam);
 	console.log(data[0].Naam);
