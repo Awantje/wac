@@ -108,7 +108,7 @@ function editcountry(){
 			}
 			}); 
 	}
-	$("#delete").click(function() {
+	function deletecountry(){
 		var uri = "/restservices/countries/deleteland/" + landcode;
 		$.ajax(uri, {
 		type: "delete",
@@ -119,7 +119,7 @@ function editcountry(){
 		$("#response").text("Could not delete country!");
 		}
 		});
-		});
+		};
 	function add(country) {
 		data = JSON.stringify(country);
 		$.post("/restservices/countries/addland", data, function(response) {
@@ -133,3 +133,4 @@ function editcountry(){
 
 	document.getElementById("nieuw").onclick = nieuwcountry;
 	document.getElementById("edit").onclick = editcountry;
+	document.getElementById("delete").onclick = deletecountry;
