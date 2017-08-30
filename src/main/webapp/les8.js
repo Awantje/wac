@@ -31,7 +31,9 @@ function editCountry(code) {
 		console.log(uri);
 	$("#Landcode").html("<label for=\"Landcode\" id=\"CODE\">Landcode: "+data[0].Code+"</label>");
 	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3\">ISO3Code: "+data[0].Iso3+"</label>");
-	$("#Naam").html("<label for=\"Naam\" id=\"NAAM\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+data[0].Naam+"</textarea>");
+	$("#Naam").html("<label for=\"Naam\" id=\"NAAM\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+"</textarea>");
+	$("#Naam").val(data[0].Naam);
+	console.log(data[0].Naam);
 	$("#Cont").html("<label for=\"Cont\" id=\"CONT\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Editcontinent\">"+data[0].Continent+"</textarea>");
 	$("#stad").html("<label for=\"Stad\" id=\"STAD\">Stad: </label><textarea rows=\"1\" cols=\"50\" id=\"Editcapi\">"+data[0].Capital+"</textarea>");
 	$("#regio").html("<label for=\"regio\" id=\"REGIO\">Regio: </label><textarea rows=\"1\" cols=\"50\" id=\"Editregion\">"+data[0].Region+"</textarea>");
