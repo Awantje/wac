@@ -50,8 +50,8 @@ function editCountry(code) {
 	$("#Editlat").text(data[0].Lat);
 	$("#longtitude").html("<label for=\"Longtitude\" id=\"LONGE\">Longtitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlng\"></textarea>");
 	$("#Editlng").text(data[0].lng);
-	var landcode = data[0].Code;
-	var landcodeiso3 = data[0].Iso3;}	
+	landcode = data[0].Code;
+	landcodeiso3 = data[0].Iso3;}	
 		);};
 	
 	$("body").on('click', 'tr', function(){
