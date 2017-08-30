@@ -118,7 +118,7 @@ function editcountry(){
 		}
 	});
 	function add(country) {
-		jQuery.post( "/restservices/countries/addland" , country);
+		jQuery.post( "/restservices/countries/addland" , country, application/json);
 	}
 	function getLandByCode(code) {
 		$.get("/restservices/countries/" + code);
