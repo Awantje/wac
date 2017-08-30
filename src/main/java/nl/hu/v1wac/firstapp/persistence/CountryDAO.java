@@ -122,9 +122,8 @@ public class CountryDAO extends BaseDAO {
 		} catch (SQLException e) {
 			// e.printStackTrace();
 			throw new RuntimeException(e);
-
 		}
-
+		
 	}
 //werkende
 	private List<Country> selectCountries(String query) {

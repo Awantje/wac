@@ -22,7 +22,10 @@ public class WorldService {
 	return dao.findByCode(code);
 }
 	public boolean deleteCountryByCode(String id){
-		return dao.delete(id);
+		if (dao.delete(id)){
+			return true;
+		}
+		return false;
 	}
 	public Country updateCountry(Country country){
 		return dao.update(country);
