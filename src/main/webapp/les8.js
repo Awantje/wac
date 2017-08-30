@@ -31,7 +31,7 @@ function editCountry(code) {
 		console.log(data);
 		console.log(uri);
 	$("#landcode").html("<label for=\"Landcode\" id=\"CODEE\">Landcode: "+"</label>");
-	$("#CODEE").text(data[0].Code);
+	$("#CODEE").html(data[0].Code);
 	$("#ISO3E").html("<label for=\"ISO3\" id=\"ISO3E\">ISO3Code: "+"</label>");
 	$("#ISO3E").text(data[0].Iso3);
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAME\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+"</textarea>");
