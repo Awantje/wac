@@ -14,7 +14,7 @@ import nl.hu.v1wac.firstapp.model.Country;
 public class CountryDAO extends BaseDAO {
 	public Country save(Country country) {
 		try (Connection conn = super.getConnection()) {
-			final String INSERT = "INSERT INTO \"country\" (code, name, continent, region, surfacearea, population, governmentform, code2, latitude, longitude, capital) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
+			final String INSERT = "INSERT INTO \"country\" (code, name, continent, region, surfacearea, population, governmentform, code2, latitude, longitude, capital) VALUES (?, ?, CAST(? AS continenttype), ?, ?, ?, ?, ?, ?, ?,?)";
 			PreparedStatement ps = conn.prepareStatement(INSERT);
 			ps.setString(1, country.getCode());
 			ps.setString(2, country.getName());
@@ -39,7 +39,7 @@ public class CountryDAO extends BaseDAO {
 	public List<Country> findAll() {
 		return selectCountries("SELECT * FROM \"country\"");
 	}
-
+//werkende
 	public Country findByCode(String code) {
 		System.out.println("findbycode");
 		try (Connection con = super.getConnection()) {
@@ -91,7 +91,7 @@ public class CountryDAO extends BaseDAO {
 
 	public Country update(Country country) {
 		try (Connection conn = super.getConnection()) {
-			final String UPDATE = "UPDATE country SET code=?, name=?, continent=?, region=?, surfacearea=?, population=?, governmentform=?, code2=?, latitude=?, longitude=?, capital=? WHERE code=?";
+			final String UPDATE = "UPDATE country SET code=?, name=?, continent=CAST(? AS continenttype), region=?, surfacearea=?, population=?, governmentform=?, code2=?, latitude=?, longitude=?, capital=? WHERE code=?";
 			PreparedStatement ps = conn.prepareStatement(UPDATE);
 			ps.setString(1, country.getCode());
 			ps.setString(2, country.getName());
@@ -104,7 +104,6 @@ public class CountryDAO extends BaseDAO {
 			ps.setDouble(9, country.getLatitude());
 			ps.setDouble(10, country.getLongitude());
 			ps.setString(11, country.getCapital());
-			ps.setString(12, country.getCode());
 			ps.executeUpdate();
 			ps.close();
 			return country;
@@ -127,7 +126,7 @@ public class CountryDAO extends BaseDAO {
 		}
 
 	}
-
+//werkende
 	private List<Country> selectCountries(String query) {
 		List<Country> results = new ArrayList<Country>();
 		try (Connection con = super.getConnection()) {
