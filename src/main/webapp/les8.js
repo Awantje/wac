@@ -112,7 +112,7 @@ function editcountry(){
 		type : "DELETE",
 		url : "/restservices/countries/deleteland",
 		data : JSON.stringify(country),
-		contentType: "application/json;",
+		contentType: "application/json",
 		success : function(msg) {
 			console.log("Data Deleted: ");
 		}
@@ -122,7 +122,7 @@ function editcountry(){
 			url : '/restservices/countries/addland',
 			type : 'POST',
 			data : JSON.stringify(country),
-			contentType: "application/json;",
+			contentType: "application/json",
 			success : function(msg) {
 				console.log("Data added: ");
 			}
