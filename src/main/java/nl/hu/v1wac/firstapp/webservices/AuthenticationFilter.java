@@ -3,6 +3,7 @@ package nl.hu.v1wac.firstapp.webservices;
 import java.io.IOException;
 
 import javax.annotation.Priority;
+import javax.ws.rs.*;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.core.HttpHeaders;
