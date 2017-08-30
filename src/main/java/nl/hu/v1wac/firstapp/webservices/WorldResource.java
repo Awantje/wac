@@ -140,9 +140,21 @@ public class WorldResource {
 	@PUT
 	@Path("/updateland")
 	@Produces("application/json")
-	public Country updateCountry(Country country){
+	public Country updateCountry(InputStream is){
 		WorldService service = ServiceProvider.getWorldService();
-		String code = country.getCode();
+		JsonObject object = Json.createReader(is).readObject();
+		String code = object.getString("Code");
+		String iso = object.getString("Iso3");
+		String name = object.getString("Naam");
+		String cont = object.getString("Continent");
+		String capi = object.getString("Capital");
+		String regi = object.getString("Region");
+		String surf = object.getString("Surface");
+		String popu = object.getString("Population");
+		String gove = object.getString("Government");
+		String lat = object.getString("Lat");
+		String lng = object.getString("lng");		
+		Country country = new Country(code, iso, name, cont, capi, regi, Double.parseDouble(surf) ,  Integer.parseInt(popu), gove,  Double.parseDouble(lat),  Double.parseDouble(lng));
 		service.updateCountry(country);
 		return service.getCountryByCode(code);
 	}
