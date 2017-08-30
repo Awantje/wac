@@ -86,7 +86,7 @@ function editcountry(){
 	var longtitudee = $("#LONGE").val();
 	var country = {Code: codete , Iso3 : iso3e , Naam : Naamne , Continent : Conte , Capital : Stade , Region : Regioe , Surface :Surfacee, Population :Populatione, Government : Governmente , Lat :Latitudee, lng :longtitudee}
 	console.log(country);
-	edit(country);
+	//edit(country);
 }
 	//function edit(country) {
 		//$.ajax({
