@@ -49,7 +49,7 @@ function editCountry(code) {
 	$("#latitude").html("<label for=\"Latitude\" id=\"LATE\">Latitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlat\"></textarea>");
 	$("#Editlat").text(data[0].Lat);
 	$("#longtitude").html("<label for=\"Longtitude\" id=\"LONGE\">Longtitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlng\"></textarea>");
-	$("#Editlng").text(data[0].Lng);}
+	$("#Editlng").text(data[0].lng);}
 		);};
 	
 	$("body").on('click', 'tr', function(){
