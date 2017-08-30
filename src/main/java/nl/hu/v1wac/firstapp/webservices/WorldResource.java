@@ -176,7 +176,7 @@ public class WorldResource {
 		String lat = object.getString("Lat");
 		String lng = object.getString("lng");
 		Country country = new Country(code, iso, name, cont, capi, regi, Double.parseDouble(surf) ,  Integer.parseInt(popu), gove,  Double.parseDouble(lat),  Double.parseDouble(lng));
-		service.saveCountry(country);
+		service.updateCountry(country);
 		return countryToJson(country).build().toString();
 	}
 	private JsonObjectBuilder countryToJson(Country c){
