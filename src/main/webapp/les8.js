@@ -216,9 +216,6 @@ function getLandByCode(code) {
 			var token = window.sessionStorage.getItem("sessionToken");
 			xhr.setRequestHeader('Authorization', 'Bearer ' + token);
 		},
-		success : function(countryList) {
-			/* Handle countryList */
-		}
 	});
 }
 
