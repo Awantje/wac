@@ -91,21 +91,19 @@ public class CountryDAO extends BaseDAO {
 
 	public Country update(Country country) {
 		try (Connection conn = super.getConnection()) {
-			final String UPDATE = "UPDATE country SET code=?, name=?, continent=CAST(? AS continenttype), region=?, surfacearea=?, population=?, governmentform=?, code2=?, latitude=?, longitude=?, capital=? WHERE code=?";
+			final String UPDATE = "UPDATE country SET name=?, continent=CAST(? AS continenttype), region=?, surfacearea=?, population=?, governmentform=?, latitude=?, longitude=?, capital=? WHERE code=?";
 			System.out.println(country.toString());
 			PreparedStatement ps = conn.prepareStatement(UPDATE);
-			ps.setString(1, country.getCode());
-			ps.setString(2, country.getName());
-			ps.setString(3, country.getContinent());
-			ps.setString(4, country.getRegion());
-			ps.setDouble(5, country.getSurface());
-			ps.setInt(6, country.getPopulation());
-			ps.setString(7, country.getGovernment());
-			ps.setString(8, country.getIso3Code());
-			ps.setDouble(9, country.getLatitude());
-			ps.setDouble(10, country.getLongitude());
-			ps.setString(11, country.getCapital());
-			ps.setString(12, country.getCode());
+			ps.setString(1, country.getName());
+			ps.setString(2, country.getContinent());
+			ps.setString(3, country.getRegion());
+			ps.setDouble(4, country.getSurface());
+			ps.setInt(5, country.getPopulation());
+			ps.setString(6, country.getGovernment());
+			ps.setDouble(7, country.getLatitude());
+			ps.setDouble(8, country.getLongitude());
+			ps.setString(9, country.getCapital());
+			ps.setString(10, country.getCode());
 			ps.executeUpdate();
 			ps.close();
 			return country;
