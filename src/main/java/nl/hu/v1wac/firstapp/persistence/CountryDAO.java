@@ -115,7 +115,7 @@ public class CountryDAO extends BaseDAO {
 
 	public boolean delete(String id) {
 		try (Connection conn = super.getConnection()) {
-			final String DELETE = "DELETE FROM \"country\" WHERE code2=?";
+			final String DELETE = "DELETE FROM \"country\" WHERE code=?";
 			PreparedStatement ps = conn.prepareStatement(DELETE);
 			ps.setString(1, id);
 			return true;
