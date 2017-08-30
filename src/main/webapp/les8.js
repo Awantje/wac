@@ -79,8 +79,8 @@ function nieuwcountry(){
 }
 function editcountry(){
 	console.log("editcountry")
-	var codete = landcode;
-	var iso3e = landcodeiso3;
+	codete = landcode;
+	iso3e = landcodeiso3;
 	var Naamne = $("#Editlandnaam").val();
 	var Conte = $("#Editcontinent").val();
 	var Stade = $("#Editcapi").val();
