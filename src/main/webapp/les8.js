@@ -31,7 +31,9 @@ function editCountry(code) {
 		console.log(data);
 		console.log(uri);
 	$("#landcode").html("<label for=\"Landcode\" id=\"CODEE\" code="+data[0].Code+">Landcode: </label>");
+	$("#landcode").val(data[0].Code);
 	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3E\"iso3="+data[0].Iso3+">ISO3Code: </label>");
+	$("#ISO3").val(data[0].Iso3);
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAME\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+"</textarea>");
 	$("#Editlandnaam").text(data[0].Naam);
 	$("#Cont").html("<label for=\"Cont\" id=\"CONTE\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Editcontinent\"></textarea>");
@@ -77,8 +79,8 @@ function nieuwcountry(){
 }
 function editcountry(){
 	console.log("editcountry")
-	var codete = $("CODEE").attr('code');
-	var iso3e = $("ISO3E").attr('Iso3');
+	var codete = $("CODEE").val();
+	var iso3e = $("ISO3E").val();
 	var Naamne = $("#Editlandnaam").val();
 	var Conte = $("#Editcontinent").val();
 	var Stade = $("#Editcapi").val();
@@ -93,7 +95,7 @@ function editcountry(){
 	edit(country);
 }
 	function edit(country) {
-		var uri = "/restservices/countries/updateland" + $("CODEE").attr('code');;
+		var uri = "/restservices/countries/updateland" + $("CODEE").val();
 		data = JSON.stringify(country);
 		$.ajax(uri, {
 			type: "put",
