@@ -115,7 +115,7 @@ function editcountry(){
 		        'Content-Type': 'application/json' 
 		    },
 		    'type': 'POST',
-		    'url': url,
+		    'url': '/restservices/countries/addland',
 		    'data': JSON.stringify(country),
 		    'dataType': 'json',
 		    });
