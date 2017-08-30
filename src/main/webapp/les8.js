@@ -61,6 +61,11 @@ function nieuwcountry(){
 	var longtituden = $("#LONGN").val();
 	var country = {Code: codetn , Iso3 : iso3n , Naam : Naamn , Continent : Contn , Capital : Stadn , Region : Region , Surface :Surfacen, Population :Populationn, Government : Governmentn , Lat :Latituden, lng :longtituden}
 	console.log(country);
+	console.log(codetn);
+	console.log($("#CODEN").val());
+	console.log($("#ISO3N").val());
+	console.log($("NAAMN").val());
+	console.log();
 	add(country);
 }
 function editcountry(){
