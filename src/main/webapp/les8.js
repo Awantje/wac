@@ -1,5 +1,15 @@
 loadcountries();
-
+$.ajax({
+	url: "restservices/countries/",
+	method: "GET",
+	beforeSend: function (xhr) {
+	var token = window.sessionStorage.getItem("sessionToken");
+	xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
+	},
+	success: function (countryList) {
+	/* Handle countryList */
+	}
+	});
 function loadcountries() {
 	$.get("/restservices/countries", function(
 			landen) {
