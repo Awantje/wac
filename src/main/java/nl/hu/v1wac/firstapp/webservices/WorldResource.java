@@ -121,7 +121,7 @@ public class WorldResource {
 		return array.toString();
 	}
 	@DELETE
-	@Path("/deleteland/{id}")
+	@Path("{id}")
 	public Response deleteCountryByCode(@PathParam("id") int id){
 		WorldService service = ServiceProvider.getWorldService();
 		if (service.deleteCountryByCode(id)){
