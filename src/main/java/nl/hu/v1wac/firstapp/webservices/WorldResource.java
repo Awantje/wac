@@ -120,13 +120,14 @@ public class WorldResource {
 		JsonArray array = jab.build();
 		return array.toString();
 	}
+	
 	@DELETE
-	@Path("{id}")
-	public Response deleteCountryByCode(@PathParam("id") int id){
+	@Path("/updateland/{id}")
+	public Response deleteCountryByCode(@PathParam("id") String id){
 		WorldService service = ServiceProvider.getWorldService();
 		if (service.deleteCountryByCode(id)){
 		return Response.ok().build();}
-		return Response.status(Response.Status.NOT_FOUND).build();
+		return Response.ok().build();
 	}
 	@PUT
 	@Path("/updateland")
