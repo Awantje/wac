@@ -93,9 +93,18 @@ function editcountry(){
 	edit(country);
 }
 	function edit(country) {
-		$.put('/restservices/countries/updateland', JSON.stringify(country), function(result){
-			   console.log(result);
-			})
+		var uri = "/restservices/countries/updateland" + $("CODEE").attr('code');;
+		data = JSON.stringify(country);
+		$.ajax(uri, {
+			type: "put",
+			data: data,
+			success: function(response) {
+			$("#responsee").text("Country Updated!");
+			},
+			error: function(response) {
+			$("#responsee").text("Could not update country!");
+			}
+			}); 
 	}
 	function remove(country) {
 	$.ajax({
@@ -111,7 +120,7 @@ function editcountry(){
 	function add(country) {
 		data = JSON.stringify(country);
 		$.post("/restservices/countries/addland", data, function(response) {
-			$("#response").text(JSON.stringify(response));
+			$("#responsen").text(JSON.stringify(response));
 			console.log(response);
 			}); 
 		};
