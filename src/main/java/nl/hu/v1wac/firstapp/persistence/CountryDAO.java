@@ -27,7 +27,6 @@ public class CountryDAO extends BaseDAO {
 			ps.setDouble(9, country.getLatitude());
 			ps.setDouble(10, country.getLongitude());
 			ps.setString(11, country.getCapital());
-			ps.setString(12, country.getCode());
 			ps.executeUpdate();
 			ps.close();
 			return country;
