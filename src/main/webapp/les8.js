@@ -126,8 +126,8 @@ function editcountry(){
 		console.log("addcountry");
 		data = JSON.stringify(country);
 		$.post("/restservices/countries/addland", data, function(response) {
-			$("#responsen").text(JSON.stringify(response));
-			console.log(response);
+			reply = JSON.stringify(response);
+			console.log(reply);
 			}); 
 		};
 	function getLandByCode(code) {
