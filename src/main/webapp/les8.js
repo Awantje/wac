@@ -73,7 +73,6 @@ function nieuwcountry(){
 	console.log(country);
 	console.log(codetn);
 	console.log("debug");
-	
 	add(country);
 }
 function editcountry(){

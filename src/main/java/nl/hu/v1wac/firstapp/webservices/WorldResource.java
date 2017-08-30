@@ -1,5 +1,6 @@
 package nl.hu.v1wac.firstapp.webservices;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,6 +8,7 @@ import java.util.Comparator;
 import javax.json.Json;
 import javax.json.JsonArray;
 import javax.json.JsonArrayBuilder;
+import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -149,8 +151,22 @@ public class WorldResource {
 	@Path("/addland")
 	@Produces("application/json")
 	@Consumes("application/json")
-	public Country addCountry(Country country){
+	public Country addCountry(InputStream is){
 		WorldService service = ServiceProvider.getWorldService();
+		JsonObject object = Json.createReader(is).readObject();
+		String code = object.getString("Code");
+		String iso = object.getString("Iso3");
+		String name = object.getString("Naam");
+		String cont = object.getString("Continent");
+		String capi = object.getString("Capital");
+		String regi = object.getString("Region");
+		String surf = object.getString("Surface");
+		String popu = object.getString("Population");
+		String gove = object.getString("Government");
+		String lat = object.getString("Lat");
+		String lng = object.getString("lng");
+		Country country = new Country(code, iso, name, cont, capi, regi, Double.parseDouble(surf) ,  Integer.parseInt(popu), gove,  Double.parseDouble(lat),  Double.parseDouble(lng));
 		return service.saveCountry(country);
+		
 	}
 }
