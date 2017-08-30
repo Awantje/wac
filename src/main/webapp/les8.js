@@ -84,13 +84,13 @@ function editcountry(){
 	var iso3e = $("ISO3E").attr('Iso3');
 	var Naamne = $("#Editlandnaam").val();
 	var Conte = $("#Editcontinent").val();
-	var Stade = $("#Editstad").val();
-	var Regioe = $("#Editregio").val();
+	var Stade = $("#Editcapi").val();
+	var Regioe = $("#Editregion").val();
 	var Surfacee = $("#Editsurface").val();
-	var Populatione = $("#Editpopulation").val();
-	var Governmente = $("#Editgovernment").val();
-	var Latitudee = $("#Editlatitude").val();
-	var longtitudee = $("#Editlongtitude").val();
+	var Populatione = $("#Editpop").val();
+	var Governmente = $("#Editgov").val();
+	var Latitudee = $("#Editlat").val();
+	var longtitudee = $("#Editlng").val();
 	var country = {Code: codete , Iso3 : iso3e , Naam : Naamne , Continent : Conte , Capital : Stade , Region : Regioe , Surface :Surfacee, Population :Populatione, Government : Governmente , Lat :Latitudee, lng :longtitudee}
 	console.log(country);
 	// edit(country);
