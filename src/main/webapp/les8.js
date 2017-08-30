@@ -1,15 +1,4 @@
-loadcountries();
-$.ajax({
-	url: "restservices/countries/",
-	method: "GET",
-	beforeSend: function (xhr) {
-	var token = window.sessionStorage.getItem("sessionToken");
-	xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
-	},
-	success: function (countryList) {
-	/* Handle countryList */
-	}
-	});
+loadcountries()
 function loadcountries() {
 	$.get("/restservices/countries", function(
 			landen) {
@@ -109,6 +98,10 @@ function editcountry(){
 		var uri = "/restservices/countries/updateland";
 		data = JSON.stringify(country);
 		$.ajax(uri, {
+			beforeSend: function (xhr) {
+				var token = window.sessionStorage.getItem("sessionToken");
+				xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
+			},
 			type: "put",
 			data: data,
 			success: function(response) {
@@ -123,6 +116,10 @@ function editcountry(){
 		console.log("deletecountry");
 		var uri = "/restservices/countries/deleteland/" + landcode;
 		$.ajax(uri, {
+			beforeSend: function (xhr) {
+				var token = window.sessionStorage.getItem("sessionToken");
+				xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
+			},
 		type: "delete",
 		success: function(response) {
 		$("#response").text("Country deleted!");
