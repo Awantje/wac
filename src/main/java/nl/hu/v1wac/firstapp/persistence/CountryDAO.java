@@ -92,6 +92,7 @@ public class CountryDAO extends BaseDAO {
 	public Country update(Country country) {
 		try (Connection conn = super.getConnection()) {
 			final String UPDATE = "UPDATE country SET code=?, name=?, continent=CAST(? AS continenttype), region=?, surfacearea=?, population=?, governmentform=?, code2=?, latitude=?, longitude=?, capital=? WHERE code=?";
+			System.out.println(country.toString());
 			PreparedStatement ps = conn.prepareStatement(UPDATE);
 			ps.setString(1, country.getCode());
 			ps.setString(2, country.getName());
