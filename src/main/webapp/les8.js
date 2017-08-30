@@ -37,19 +37,19 @@ function editCountry(code) {
 	$("#Cont").html("<label for=\"Cont\" id=\"CONTE\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Editcontinent\"></textarea>");
 	$("#Editcontinent").text(data[0].Continent);
 	$("#stad").html("<label for=\"Stad\" id=\"STADE\">Stad: </label><textarea rows=\"1\" cols=\"50\" id=\"Editcapi\"></textarea>");
-	$("#Editstad").text(data[0].Capital);
+	$("#Editcapi").text(data[0].Capital);
 	$("#regio").html("<label for=\"regio\" id=\"REGIOE\">Regio: </label><textarea rows=\"1\" cols=\"50\" id=\"Editregion\"></textarea>");
-	$("#Editregio").text(data[0].Region);
+	$("#Editregion").text(data[0].Region);
 	$("#surface").html("<label for=\"surface\" id=\"OPPE\">Oppervlakte: </label><textarea rows=\"1\" cols=\"50\" id=\"Editsurface\"></textarea>");
 	$("#Editsurface").text(data[0].Surface);
 	$("#Population").html("<label for=\"Population\" id=\"INWE\">Inwoners: </label><textarea rows=\"1\" cols=\"50\" id=\"Editpop\"></textarea>");
-	$("#Editpopulation").text(data[0].Population);
+	$("#Editpop").text(data[0].Population);
 	$("#Government").html("<label for=\"Government\" id=\"OVERE\">Overheid: </label><textarea rows=\"1\" cols=\"50\" id=\"Editgov\"></textarea>");
-	$("#Editgovernment").text(data[0].Government);
+	$("#Editgov").text(data[0].Government);
 	$("#latitude").html("<label for=\"Latitude\" id=\"LATE\">Latitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlat\"></textarea>");
-	$("#Editlatitude").text(data[0].Lat);
+	$("#Editlat").text(data[0].Lat);
 	$("#longtitude").html("<label for=\"Longtitude\" id=\"LONGE\">Longtitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlng\"></textarea>");
-	$("#Editlongtitude").text(data[0].Lng);}
+	$("#Editlng").text(data[0].Lng);}
 		);};
 	
 	$("body").on('click', 'tr', function(){
