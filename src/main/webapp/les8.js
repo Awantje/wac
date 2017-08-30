@@ -209,14 +209,7 @@ function add(country) {
 	});
 };
 function getLandByCode(code) {
-	$.ajax({
-		url : "restservices/countries/" + code,
-		method : "GET",
-		beforeSend : function(xhr) {
-			var token = window.sessionStorage.getItem("sessionToken");
-			xhr.setRequestHeader('Authorization', 'Bearer ' + token);
-		},
-	});
+	$.get("/restservices/countries/" + code);
 }
 
 document.getElementById("nieuw").onclick = nieuwcountry;
