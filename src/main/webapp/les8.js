@@ -95,6 +95,7 @@ function editcountry(){
 	edit(country);
 }
 	function edit(country) {
+		console.log("editcountry");
 		var uri = "/restservices/countries/updateland";
 		data = JSON.stringify(country);
 		$.ajax(uri, {
@@ -109,6 +110,7 @@ function editcountry(){
 			}); 
 	}
 	function deletecountry(){
+		console.log("deletecountry");
 		var uri = "/restservices/countries/deleteland/" + landcode;
 		$.ajax(uri, {
 		type: "delete",
@@ -121,6 +123,7 @@ function editcountry(){
 		});
 		};
 	function add(country) {
+		console.log("addcountry");
 		data = JSON.stringify(country);
 		$.post("/restservices/countries/addland", data, function(response) {
 			$("#responsen").text(JSON.stringify(response));

@@ -5,19 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonArrayBuilder;
-import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.json.*;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
 
 import nl.hu.v1wac.firstapp.model.Country;
 import nl.hu.v1wac.firstapp.model.ServiceProvider;
@@ -132,9 +122,11 @@ public class WorldResource {
 	}
 	@DELETE
 	@Path("/deleteland/{id}")
-	public boolean deleteCountryByCode(@PathParam("id") int id){
+	public Response deleteCountryByCode(@PathParam("id") int id){
 		WorldService service = ServiceProvider.getWorldService();
-		return service.deleteCountryByCode(id);
+		if (service.deleteCountryByCode(id)){
+		return Response.ok().build();}
+		return Response.status(Response.Status.NOT_FOUND).build();
 	}
 	@PUT
 	@Path("/updateland")
