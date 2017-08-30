@@ -110,7 +110,7 @@ function editcountry(){
 	}
 	$.ajax({
 		type : "DELETE",
-		url : "/countries/deleteland",
+		url : "/restservices/countries/deleteland",
 		data : JSON.stringify(country),
 		contentType: "application/json;",
 		success : function(msg) {
@@ -118,7 +118,15 @@ function editcountry(){
 		}
 	});
 	function add(country) {
-		jQuery.post( "/restservices/countries/addland" , country, application/json);
+		$.ajax({
+			url : '/restservices/countries/addland',
+			type : 'POST',
+			data : JSON.stringify(country),
+			contentType: "application/json;",
+			success : function(msg) {
+				console.log("Data added: ");
+			}
+		});
 	}
 	function getLandByCode(code) {
 		$.get("/restservices/countries/" + code);
