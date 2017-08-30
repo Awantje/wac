@@ -14,7 +14,7 @@ public class Country {
 	private double longitude;
 	
 	
-	public Country(String iso2cd, String iso3cd, String nm, String cap, String ct, String reg, double sur, int pop, String gov, double lat, double lng) {
+	public Country(String iso2cd, String iso3cd, String nm, String ct, String cap, String reg, double sur, int pop, String gov, double lat, double lng) {
 		iso2Code = iso2cd;
 		iso3Code = iso3cd;
 		name = nm;
