@@ -140,7 +140,7 @@ public class WorldResource {
 	@PUT
 	@Path("/updateland")
 	@Produces("application/json")
-	public Country updateCountry(InputStream is){
+	public String updateCountry(InputStream is){
 		WorldService service = ServiceProvider.getWorldService();
 		JsonObject object = Json.createReader(is).readObject();
 		String code = object.getString("Code");
@@ -156,7 +156,7 @@ public class WorldResource {
 		String lng = object.getString("lng");		
 		Country country = new Country(code, iso, name, cont, capi, regi, Double.parseDouble(surf) ,  Integer.parseInt(popu), gove,  Double.parseDouble(lat),  Double.parseDouble(lng));
 		service.updateCountry(country);
-		return service.getCountryByCode(code);
+		return countryToJson(country).build().toString();
 	}
 	@POST
 	@Path("/addland")
