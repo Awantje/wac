@@ -30,7 +30,7 @@ function editCountry(code) {
 		console.log(data[0].Code);
 		console.log(data);
 		console.log(uri);
-	$("#landcode").html("<label for=\"Landcode\" id=\"CODEE\" code="+data[0].Code+">Landcode: </label>");
+	$("#landcode").html("<label for=\"Landcode\" id=\"CODEE\" code=\"+"+data[0].Code+"+\"+>Landcode: </label>");
 	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3E\"iso3="+data[0].Iso3+">ISO3Code: </label>");
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAME\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+"</textarea>");
 	$("#Editlandnaam").text(data[0].Naam);
@@ -69,7 +69,7 @@ function nieuwcountry(){
 	console.log($("#ISO3N").val());
 	console.log($("NAAMN").val());
 	console.log("debug");
-	//add(country);
+	// add(country);
 }
 function editcountry(){
 	console.log("editcountry")
@@ -99,17 +99,17 @@ function editcountry(){
 			}
 		});
 	}
-	//function remove(country) {
-	//}
-	//$.ajax({
-		//type : "DELETE",
-		//url : "/countries/deleteland",
-		//data : JSON.stringify(country),
-		//contentType: "application/json;",
-		//success : function(msg) {
-			//console.log("Data Deleted: ");
-		//}
-	//});
+	// function remove(country) {
+	// }
+	// $.ajax({
+		// type : "DELETE",
+		// url : "/countries/deleteland",
+		// data : JSON.stringify(country),
+		// contentType: "application/json;",
+		// success : function(msg) {
+			// console.log("Data Deleted: ");
+		// }
+	// });
 	function add(country) {
 		$.ajax({
 			url : '/countries/addland',
