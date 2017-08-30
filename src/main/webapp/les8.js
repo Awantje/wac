@@ -31,9 +31,7 @@ function editCountry(code) {
 		console.log(data);
 		console.log(uri);
 	$("#landcode").html("<label for=\"Landcode\" id=\"CODEE\">Landcode: "+data[0].Code+"</label>");
-	$("#landcode").val(data[0].Code);
-	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3E\">ISO3Code: "+data[0].Iso3+"</label>");
-	$("#ISO3").val(data[0].Iso3);
+	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3E\">ISO3Code: "+data[0].Iso3+"</label>");;
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAME\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+"</textarea>");
 	$("#Editlandnaam").text(data[0].Naam);
 	$("#Cont").html("<label for=\"Cont\" id=\"CONTE\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Editcontinent\"></textarea>");
@@ -51,7 +49,9 @@ function editCountry(code) {
 	$("#latitude").html("<label for=\"Latitude\" id=\"LATE\">Latitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlat\"></textarea>");
 	$("#Editlat").text(data[0].Lat);
 	$("#longtitude").html("<label for=\"Longtitude\" id=\"LONGE\">Longtitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlng\"></textarea>");
-	$("#Editlng").text(data[0].lng);}
+	$("#Editlng").text(data[0].lng);
+	var landcode = data[0].Code;
+	var landcodeiso3 = data[0].Iso3;}	
 		);};
 	
 	$("body").on('click', 'tr', function(){
@@ -79,8 +79,8 @@ function nieuwcountry(){
 }
 function editcountry(){
 	console.log("editcountry")
-	var codete = $("CODEE").val();
-	var iso3e = $("ISO3E").val();
+	var codete = landcode;
+	var iso3e = landcodeiso3;
 	var Naamne = $("#Editlandnaam").val();
 	var Conte = $("#Editcontinent").val();
 	var Stade = $("#Editcapi").val();
