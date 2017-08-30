@@ -95,7 +95,7 @@ function editcountry(){
 	edit(country);
 }
 	function edit(country) {
-		var uri = "/restservices/countries/updateland" + $("CODEE").val();
+		var uri = "/restservices/countries/updateland" + landcodeiso3;
 		data = JSON.stringify(country);
 		$.ajax(uri, {
 			type: "put",

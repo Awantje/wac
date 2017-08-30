@@ -57,7 +57,7 @@ public class CountryDAO extends BaseDAO {
 		String government = dbResultSet.getString("governmentform");
 		Double latitude = dbResultSet.getDouble("latitude");
 		Double longitude = dbResultSet.getDouble("longitude");
-		Country land = new Country(iso2Code, iso3Code, name, capital, continent, region, surface, population,
+		Country land = new Country(iso2Code, iso3Code, name, continent, capital, region, surface, population,
 				government, latitude, longitude);
 		System.out.println(land);
 		return land;
@@ -155,7 +155,7 @@ public class CountryDAO extends BaseDAO {
 
 				Double longitude = dbResultSet.getDouble("longitude");
 
-				Country land = new Country(iso2Code, iso3Code, name, capital, continent, region, surface, population,
+				Country land = new Country(iso2Code, iso3Code, name, continent, capital, region, surface, population,
 						government, latitude, longitude);
 				results.add(land);
 			}
