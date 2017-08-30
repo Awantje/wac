@@ -151,7 +151,7 @@ public class WorldResource {
 	@Path("/addland")
 	@Produces("application/json")
 	@Consumes("application/json")
-	public Country addCountry(InputStream is){
+	public String addCountry(InputStream is){
 		WorldService service = ServiceProvider.getWorldService();
 		JsonObject object = Json.createReader(is).readObject();
 		String code = object.getString("Code");
@@ -166,7 +166,22 @@ public class WorldResource {
 		String lat = object.getString("Lat");
 		String lng = object.getString("lng");
 		Country country = new Country(code, iso, name, cont, capi, regi, Double.parseDouble(surf) ,  Integer.parseInt(popu), gove,  Double.parseDouble(lat),  Double.parseDouble(lng));
-		return service.saveCountry(country);
-		
+		service.saveCountry(country);
+		return countryToJson(country).build().toString();
+	}
+	private JsonObjectBuilder countryToJson(Country c){
+		JsonObjectBuilder job = Json.createObjectBuilder();
+		job.add("Code", c.getCode());
+		job.add("Iso3", c.getIso3Code());
+		job.add("Naam", c.getName());
+		job.add("Continent", c.getContinent());
+		job.add("Capital", c.getCapital());
+		job.add("Region", c.getRegion());
+		job.add("Surface", c.getSurface());
+		job.add("Population", c.getPopulation());
+		job.add("Government", c.getGovernment());
+		job.add("Lat", c.getLatitude());
+		job.add("lng", c.getLongitude());
+		return job;
 	}
 }
