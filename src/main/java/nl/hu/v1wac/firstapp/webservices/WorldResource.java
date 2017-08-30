@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import javax.annotation.security.RolesAllowed;
 import javax.json.*;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -16,6 +17,7 @@ import nl.hu.v1wac.firstapp.model.WorldService;
 @Path("/countries")
 public class WorldResource {
 	@GET
+	@RolesAllowed("user")
 	@Produces("application/json")
 	public String getCountries() {
 		WorldService service = ServiceProvider.getWorldService();
@@ -40,6 +42,7 @@ public class WorldResource {
 	}
 	@GET
 	@Path("{id}")
+	@RolesAllowed("user")
 	@Produces("application/json")
 	public String getCountries(@PathParam("id") String id){
 		WorldService service = ServiceProvider.getWorldService();
@@ -66,6 +69,7 @@ public class WorldResource {
 	}
 	@GET
 	@Path("/largestsurfaces")
+	@RolesAllowed("user")
 	@Produces("application/json")
 	public String getCountriesBySurface(){
 		JsonObjectBuilder job = Json.createObjectBuilder();
@@ -94,6 +98,8 @@ public class WorldResource {
 	}
 	@GET
 	@Path("/largestpopulations")
+	@RolesAllowed("user")
+
 	@Produces("application/json")
 	public String getCountriesByPop(){
 		JsonObjectBuilder job = Json.createObjectBuilder();
@@ -123,6 +129,8 @@ public class WorldResource {
 	
 	@DELETE
 	@Path("/deleteland/{id}")
+	@RolesAllowed("user")
+
 	public Response deleteCountryByCode(@PathParam("id") String id){
 		WorldService service = ServiceProvider.getWorldService();
 		if (service.deleteCountryByCode(id)){
@@ -131,6 +139,8 @@ public class WorldResource {
 	}
 	@PUT
 	@Path("/updateland")
+	@RolesAllowed("user")
+
 	@Produces("application/json")
 	public String updateCountry(InputStream is){
 		WorldService service = ServiceProvider.getWorldService();
@@ -152,6 +162,8 @@ public class WorldResource {
 	}
 	@POST
 	@Path("/addland")
+	@RolesAllowed("user")
+
 	@Produces("application/json")
 	public String addCountry(InputStream is){
 		WorldService service = ServiceProvider.getWorldService();
