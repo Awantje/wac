@@ -109,16 +109,11 @@ function editcountry(){
 	});
 	}
 	function add(country) {
-		jQuery.ajax({
-		    headers: { 
-		        'Accept': 'application/json',
-		        'Content-Type': 'application/json' 
-		    },
-		    'type': 'POST',
-		    'url': '/restservices/countries/addland',
-		    'data': JSON.stringify(country),
-		    'dataType': 'json',
-		    });
+		data = JSON.stringify(country);
+		$.post("/restservices/countries/addland", data, function(response) {
+			$("#response").text(JSON.stringify(response));
+			console.log(response);
+			}); 
 		};
 	function getLandByCode(code) {
 		$.get("/restservices/countries/" + code);
