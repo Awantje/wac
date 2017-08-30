@@ -34,16 +34,23 @@ function editCountry(code) {
 	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3E\"iso3="+data[0].Iso3+">ISO3Code: </label>");
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAME\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+"</textarea>");
 	$("#Editlandnaam").text(data[0].Naam);
-	console.log(data[0].Naam);
 	$("#Cont").html("<label for=\"Cont\" id=\"CONTE\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Editcontinent\">"+data[0].Continent+"</textarea>");
+	$("#Editcontinent").text(data[0].Naam);
 	$("#stad").html("<label for=\"Stad\" id=\"STADE\">Stad: </label><textarea rows=\"1\" cols=\"50\" id=\"Editcapi\">"+data[0].Capital+"</textarea>");
+	$("#Editstad").text(data[0].Naam);
 	$("#regio").html("<label for=\"regio\" id=\"REGIOE\">Regio: </label><textarea rows=\"1\" cols=\"50\" id=\"Editregion\">"+data[0].Region+"</textarea>");
+	$("#Editregio").text(data[0].Naam);
 	$("#surface").html("<label for=\"surface\" id=\"OPPE\">Oppervlakte: </label><textarea rows=\"1\" cols=\"50\" id=\"Editsurface\">"+data[0].Surface+"</textarea>");
+	$("#Editsurface").text(data[0].Naam);
 	$("#Population").html("<label for=\"Population\" id=\"INWE\">Inwoners: </label><textarea rows=\"1\" cols=\"50\" id=\"Editpop\">"+data[0].Population+"</textarea>");
+	$("#Editpopulation").text(data[0].Naam);
 	$("#Government").html("<label for=\"Government\" id=\"OVERE\">Overheid: </label><textarea rows=\"1\" cols=\"50\" id=\"Editgov\">"+data[0].Government+"</textarea>");
+	$("#Editgovernment").text(data[0].Naam);
 	$("#latitude").html("<label for=\"Latitude\" id=\"LATE\">Latitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlat\">"+data[0].Lat+"</textarea>");
-	$("#longtitude").html("<label for=\"Longtitude\" id=\"LONGE\">Longtitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlng\">"+data[0].lng+"</textarea>");}
-	);};
+	$("#Editlatitude").text(data[0].Naam);
+	$("#longtitude").html("<label for=\"Longtitude\" id=\"LONGE\">Longtitude: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlng\">"+data[0].lng+"</textarea>");
+	$("#Editlongtitude").text(data[0].Naam);}
+		);};
 	
 	$("body").on('click', 'tr', function(){
 		editCountry(this.id);
@@ -69,47 +76,47 @@ function nieuwcountry(){
 	console.log($("#ISO3N").val());
 	console.log($("NAAMN").val());
 	console.log("debug");
-	//add(country);
+	// add(country);
 }
 function editcountry(){
 	console.log("editcountry")
 	var codete = $("CODEE").attr('code');
 	var iso3e = $("ISO3E").attr('Iso3');
 	var Naamne = $("#Editlandnaam").val();
-	var Conte = $("#CONTE").val();
-	var Stade = $("#STADE").val();
-	var Regioe = $("#REGIOE").val();
-	var Surfacee = $("#OPPE").val();
-	var Populatione = $("#INWE").val();
-	var Governmente = $("#OVERE").val();
-	var Latitudee = $("#LATE").val();
-	var longtitudee = $("#LONGE").val();
+	var Conte = $("#Editcontinent").val();
+	var Stade = $("#Editstad").val();
+	var Regioe = $("#Editregio").val();
+	var Surfacee = $("#Editsurface").val();
+	var Populatione = $("#Editpopulation").val();
+	var Governmente = $("#Editgovernment").val();
+	var Latitudee = $("#Editlatitude").val();
+	var longtitudee = $("#Editlongtitude").val();
 	var country = {Code: codete , Iso3 : iso3e , Naam : Naamne , Continent : Conte , Capital : Stade , Region : Regioe , Surface :Surfacee, Population :Populatione, Government : Governmente , Lat :Latitudee, lng :longtitudee}
 	console.log(country);
-	//edit(country);
+	// edit(country);
 }
-	//function edit(country) {
-		//$.ajax({
-			//url : '/restservices/countries/updateland',
-			//type : 'PUT',
-			//data : JSON.stringify(country),
-			//contentType: "application/json",
-			//success : function(msg) {
-				//console.log("Data Edited: ");
-			//}
-		//});
-	//}
-	//function remove(country) {
-	//}
-	//$.ajax({
-		//type : "DELETE",
-		//url : "/countries/deleteland",
-		//data : JSON.stringify(country),
-		//contentType: "application/json;",
-		//success : function(msg) {
-			//console.log("Data Deleted: ");
-		//}
-	//});
+	// function edit(country) {
+		// $.ajax({
+			// url : '/restservices/countries/updateland',
+			// type : 'PUT',
+			// data : JSON.stringify(country),
+			// contentType: "application/json",
+			// success : function(msg) {
+				// console.log("Data Edited: ");
+			// }
+		// });
+	// }
+	// function remove(country) {
+	// }
+	// $.ajax({
+		// type : "DELETE",
+		// url : "/countries/deleteland",
+		// data : JSON.stringify(country),
+		// contentType: "application/json;",
+		// success : function(msg) {
+			// console.log("Data Deleted: ");
+		// }
+	// });
 	function add(country) {
 		$.ajax({
 			url : '/countries/addland',
