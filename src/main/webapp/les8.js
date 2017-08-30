@@ -1,29 +1,44 @@
 loadcountries()
 function loadcountries() {
-	$.get("/restservices/countries", function(
-			landen) {
-		console.log(landen);
-		console.log(landen[0]);
-		console.log(landen[0].Naam);
-		var countries = $("#Countries");
-		countries.append("<tbody>");
-		$.each(landen, function(i, item) {
-			var naam = "<td>" + landen[i].Naam + "</td>";
-			var hoofdstad = "<td>" + landen[i].Capital + "</td>";
-			var regio = "<td>" + landen[i].Region + "</td>";
-			var string = "<tr id=" + landen[i].Code + ">" + naam + hoofdstad
-					+ regio + "</tr>";
-			countries.append(string)
-		});
-		countries.append("</tbody>");
+	$.ajax({
+		url: "restservices/countries/",
+		method: "GET",
+		beforeSend: function (xhr) {
+		var token = window.sessionStorage.getItem("sessionToken");
+		xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
+		},
+		success: function (landen) {
+			console.log(landen);
+			console.log(landen[0]);
+			console.log(landen[0].Naam);
+			var countries = $("#Countries");
+			countries.append("<tbody>");
+			$.each(landen, function(i, item) {
+				var naam = "<td>" + landen[i].Naam + "</td>";
+				var hoofdstad = "<td>" + landen[i].Capital + "</td>";
+				var regio = "<td>" + landen[i].Region + "</td>";
+				var string = "<tr id=" + landen[i].Code + ">" + naam + hoofdstad
+						+ regio + "</tr>";
+				countries.append(string)
+			});
+			countries.append("</tbody>");
 
-	});
+		}
+		});
 
 }
 
 function editCountry(code) {
+	
 	uri = "/restservices/countries/"+code;
-		$.get(uri, function(data){
+	$.ajax({
+		url: uri,
+		method: "GET",
+		beforeSend: function (xhr) {
+		var token = window.sessionStorage.getItem("sessionToken");
+		xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
+		},
+		success: function (data) {
 		console.log("Editcountrycode");
 		console.log(data[0].Iso3);
 		console.log(data[0].Code);
@@ -51,12 +66,11 @@ function editCountry(code) {
 	$("#Editlng").text(data[0].lng);
 	landcode = data[0].Code;
 	landcodeiso3 = data[0].Iso3;}	
-		);};
-	
+		})
 	$("body").on('click', 'tr', function(){
 		editCountry(this.id);
 	});
-
+}
 function nieuwcountry(){
 	console.log("nieuwcountry")
 	var codetn = $("#CODEN").val();
@@ -133,13 +147,31 @@ function editcountry(){
 	function add(country) {
 		console.log("addcountry");
 		data = JSON.stringify(country);
-		$.post("/restservices/countries/addland", data, function(response) {
-			reply = JSON.stringify(response);
-			console.log(reply);
-			}); 
+		$.ajax({
+			url: "/restservices/countries/addland",
+			method: "POST",
+			beforeSend: function (xhr) {
+			var token = window.sessionStorage.getItem("sessionToken");
+			xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
+			},
+			success: function (response) {
+				reply = JSON.stringify(response);
+				console.log(reply);
+			}
+			});
 		};
 	function getLandByCode(code) {
-		$.get("/restservices/countries/" + code);
+		$.ajax({
+			url: "restservices/countries/"+code,
+			method: "GET",
+			beforeSend: function (xhr) {
+			var token = window.sessionStorage.getItem("sessionToken");
+			xhr.setRequestHeader( 'Authorization', 'Bearer ' + token);
+			},
+			success: function (countryList) {
+			/* Handle countryList */
+			}
+			});
 	}
 
 	document.getElementById("nieuw").onclick = nieuwcountry;
