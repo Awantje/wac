@@ -116,6 +116,7 @@ function editcountry(){
 		type: "delete",
 		success: function(response) {
 		$("#response").text("Country deleted!");
+		loadcountries();
 		},
 		error: function(response) {
 		$("#response").text("Could not delete country!");
