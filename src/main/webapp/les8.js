@@ -205,6 +205,7 @@ function add(country) {
 		success : function(response) {
 			reply = JSON.stringify(response);
 			console.log(reply);
+			console.log(data);
 		}
 	});
 };
