@@ -111,7 +111,7 @@ function editcountry(){
 	}
 	function deletecountry(){
 		console.log("deletecountry");
-		var uri = "/restservices/countries/deleteland" + landcode;
+		var uri = "/restservices/countries/deleteland/" + landcode;
 		$.ajax(uri, {
 		type: "delete",
 		success: function(response) {
