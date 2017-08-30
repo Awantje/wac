@@ -93,18 +93,11 @@ function editcountry(){
 	edit(country);
 }
 	function edit(country) {
-		$.ajax({
-			url : '/restservices/countries/updateland',
-			type : 'PUT',
-			data : JSON.stringify(country),
-			contentType: "application/json",
-			success : function(msg) {
-				console.log("Data Edited: ");
-			}
-		});
+		$.put('/restservices/countries/updateland', JSON.stringify(country), function(result){
+			   console.log(result);
+			})
 	}
 	function remove(country) {
-	}
 	$.ajax({
 		type : "DELETE",
 		url : "/restservices/countries/deleteland",
@@ -114,6 +107,7 @@ function editcountry(){
 			console.log("Data Deleted: ");
 		}
 	});
+	}
 	function add(country) {
 	    $.post("/restservices/countries/addland",
 	    		JSON.stringify(country),
