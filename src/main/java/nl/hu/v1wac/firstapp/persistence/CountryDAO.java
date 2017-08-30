@@ -112,12 +112,24 @@ public class CountryDAO extends BaseDAO {
 			throw new RuntimeException(e);
 		}
 	}
-
+	
 	public boolean delete(String id) {
 		try (Connection conn = super.getConnection()) {
-			final String DELETE = "DELETE FROM \"country\" WHERE code=?";
-			PreparedStatement ps = conn.prepareStatement(DELETE);
-			ps.setString(1, id);
+			final String DELETE1 = "DELETE FROM \"countrylanguage\" WHERE countrycode= ?";
+			final String DELETE2 = "DELETE FROM \"City\" WHERE countrycode=?";
+			final String DELETE3 = "DELETE FROM \"country\" WHERE code=?";
+			PreparedStatement ps1 = conn.prepareStatement(DELETE1);
+			PreparedStatement ps2 = conn.prepareStatement(DELETE2);
+			PreparedStatement ps3 = conn.prepareStatement(DELETE3);
+			ps1.setString(1, id);
+			ps2.setString(1, id);
+			ps3.setString(1, id);
+			ps1.executeUpdate();
+			ps2.executeUpdate();
+			ps3.executeUpdate();
+			ps1.close();
+			ps2.close();
+			ps3.close();
 			return true;
 		} catch (SQLException e) {
 			// e.printStackTrace();
