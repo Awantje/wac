@@ -127,7 +127,7 @@ public class WorldResource {
 		WorldService service = ServiceProvider.getWorldService();
 		if (service.deleteCountryByCode(id)){
 		return Response.ok().build();}
-		return Response.ok().build();
+		return Response.status(Response.Status.NOT_FOUND).build();
 	}
 	@PUT
 	@Path("/updateland")
