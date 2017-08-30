@@ -33,7 +33,7 @@ function editCountry(code) {
 	$("#Landcode").html("<label for=\"Landcode\" id=\"CODEE\">Landcode: "+data[0].Code+"</label>");
 	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3E\">ISO3Code: "+data[0].Iso3+"</label>");
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAME\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+"</textarea>");
-	$("#Editlandnaam").text(data[0].Naam);
+	$("#Editlandnaam").val(data[0].Naam);
 	console.log(data[0].Naam);
 	$("#Cont").html("<label for=\"Cont\" id=\"CONTE\">Continent:</label><textarea rows=\"1\" cols=\"50\" id=\"Editcontinent\">"+data[0].Continent+"</textarea>");
 	$("#stad").html("<label for=\"Stad\" id=\"STADE\">Stad: </label><textarea rows=\"1\" cols=\"50\" id=\"Editcapi\">"+data[0].Capital+"</textarea>");
@@ -51,17 +51,17 @@ function editCountry(code) {
 
 function nieuwcountry(){
 	console.log("nieuwcountry")
-	var codetn = $("#CODEN").text();
-	var iso3n = $("#ISO3N").text();
-	var Naamn = $("#NAAMN").text();
-	var Contn = $("#CONTN").text();
-	var Stadn = $("#STADN").text();
-	var Region = $("#REGION").text();
-	var Surfacen = $("#OPPN").text();
-	var Populationn = $("#INWN").text();
-	var Governmentn = $("#OVERN").text();
-	var Latituden = $("#LATN").text();
-	var longtituden = $("#LONGN").text();
+	var codetn = $("#CODEN").val();
+	var iso3n = $("#ISO3N").val();
+	var Naamn = $("#NAAMN").val();
+	var Contn = $("#CONTN").val();
+	var Stadn = $("#STADN").val();
+	var Region = $("#REGION").val();
+	var Surfacen = $("#OPPN").val();
+	var Populationn = $("#INWN").val();
+	var Governmentn = $("#OVERN").val();
+	var Latituden = $("#LATN").val();
+	var longtituden = $("#LONGN").val();
 	var country = {Code: codetn , Iso3 : iso3n , Naam : Naamn , Continent : Contn , Capital : Stadn , Region : Region , Surface :Surfacen, Population :Populationn, Government : Governmentn , Lat :Latituden, lng :longtituden}
 	console.log(country);
 	console.log(codetn);
