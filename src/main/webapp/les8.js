@@ -31,8 +31,8 @@ function editCountry(code) {
 		console.log(data);
 		console.log(uri);
 	
-	$("#ISO3").html("<label for=\"ISO3\" id=\"ISO3E\">ISO3Code: "+data[0].Iso3+"</label>");
-	$("#Landcode").html("<label for=\"Landcode\" id=\"CODEE\">Landcode: "+data[0].Code+"</label>");
+	$("#Landcode").html("<label for=\"ISO3\" id=\"ISO3E\">ISO3Code: "+data[0].Iso3+"</label>");
+	$("#ISO3").html("<label for=\"Landcode\" id=\"CODEE\">Landcode: "+data[0].Code+"</label>");
 	$("#Naam").html("<label for=\"Naam\" id=\"NAAME\">Landnaam: </label><textarea rows=\"1\" cols=\"50\" id=\"Editlandnaam\">"+"</textarea>");
 	$("#Editlandnaam").text(data[0].Naam);
 	console.log(data[0].Naam);
