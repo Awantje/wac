@@ -65,7 +65,7 @@ function nieuwcountry(){
 	console.log($("#CODEN").val());
 	console.log($("#ISO3N").val());
 	console.log($("NAAMN").val());
-	console.log();
+	console.log("debug");
 	//add(country);
 }
 function editcountry(){
