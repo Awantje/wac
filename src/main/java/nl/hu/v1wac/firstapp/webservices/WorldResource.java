@@ -140,7 +140,6 @@ public class WorldResource {
 	@PUT
 	@Path("/updateland")
 	@Produces("application/json")
-	@Consumes("application/json")
 	public Country updateCountry(Country country){
 		WorldService service = ServiceProvider.getWorldService();
 		String code = country.getCode();
