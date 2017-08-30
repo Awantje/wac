@@ -48,9 +48,9 @@ function editCountry(code) {
 
 function nieuwcountry(){
 	console.log("nieuwcountry")
-	var codetn = $("#CODEN").html();
-	var iso3n = $("#ISO3N").html();
-	var Naamnd = $("#NAAMN").val();
+	var codetn = $("#CODEN").val();
+	var iso3n = $("#ISO3N").val();
+	var Naamn = $("#NAAMN").val();
 	var Contn = $("#CONTN").val();
 	var Stadn = $("#STADN").val();
 	var Region = $("#REGION").val();
@@ -59,24 +59,24 @@ function nieuwcountry(){
 	var Governmentn = $("#OVERN").val();
 	var Latituden = $("#LATN").val();
 	var longtituden = $("#LONGN").val();
-	var country = {Code: codetn , Iso3 : iso3n , Naam : Naamnd , Continent : Contn , Capital : Stadn , Region : Region , Surface :Surfacen, Population :Populationn, Government : Governmentn , Lat :Latituden, lng :longtituden}
+	var country = {Code: codetn , Iso3 : iso3n , Naam : Naamn , Continent : Contn , Capital : Stadn , Region : Region , Surface :Surfacen, Population :Populationn, Government : Governmentn , Lat :Latituden, lng :longtituden}
 	console.log(country);
 	add(country);
 }
 function editcountry(){
 	console.log("editcountry")
-	var codetn = $("Landcode").val();
-	var iso3n = $("ISO3").val();
-	var Naamnd = $("#Naam").val();
-	var Contn = $("#CONT").val();
-	var Stadn = $("#STAD").val();
-	var Region = $("#REGIO").val();
-	var Surfacen = $("#OPP").val();
-	var Populationn = $("#INW").val();
-	var Governmentn = $("#OVER").val();
-	var Latituden = $("#LAT").val();
-	var longtituden = $("#LONG").val();
-	var country = {Code: codetn , Iso3 : iso3n , Naam : Naamnd , Continent : Contn , Capital : Stadn , Region : Region , Surface :Surfacen, Population :Populationn, Government : Governmentn , Lat :Latituden, lng :longtituden}
+	var codete = $("Landcode").val();
+	var iso3e = $("ISO3").val();
+	var Naamne = $("#Naam").val();
+	var Conte = $("#CONT").val();
+	var Stade = $("#STAD").val();
+	var Regioe = $("#REGIO").val();
+	var Surfacee = $("#OPP").val();
+	var Populatione = $("#INW").val();
+	var Governmente = $("#OVER").val();
+	var Latitudee = $("#LAT").val();
+	var longtitudee = $("#LONG").val();
+	var country = {Code: codete , Iso3 : iso3e , Naam : Naamne , Continent : Conte , Capital : Stade , Region : Regioe , Surface :Surfacee, Population :Populatione, Government : Governmente , Lat :Latitudee, lng :longtitudee}
 	console.log(country);
 	edit(country);
 }
