@@ -76,7 +76,7 @@ function nieuwcountry(){
 	console.log($("#ISO3N").val());
 	console.log($("NAAMN").val());
 	console.log("debug");
-	// add(country);
+	add(country);
 }
 function editcountry(){
 	console.log("editcountry")
@@ -93,30 +93,30 @@ function editcountry(){
 	var longtitudee = $("#Editlng").val();
 	var country = {Code: codete , Iso3 : iso3e , Naam : Naamne , Continent : Conte , Capital : Stade , Region : Regioe , Surface :Surfacee, Population :Populatione, Government : Governmente , Lat :Latitudee, lng :longtitudee}
 	console.log(country);
-	// edit(country);
+	edit(country);
 }
-	// function edit(country) {
-		// $.ajax({
-			// url : '/restservices/countries/updateland',
-			// type : 'PUT',
-			// data : JSON.stringify(country),
-			// contentType: "application/json",
-			// success : function(msg) {
-				// console.log("Data Edited: ");
-			// }
-		// });
-	// }
-	// function remove(country) {
-	// }
-	// $.ajax({
-		// type : "DELETE",
-		// url : "/countries/deleteland",
-		// data : JSON.stringify(country),
-		// contentType: "application/json;",
-		// success : function(msg) {
-			// console.log("Data Deleted: ");
-		// }
-	// });
+	function edit(country) {
+		$.ajax({
+			url : '/restservices/countries/updateland',
+			type : 'PUT',
+			data : JSON.stringify(country),
+			contentType: "application/json",
+			success : function(msg) {
+				console.log("Data Edited: ");
+			}
+		});
+	}
+	function remove(country) {
+	}
+	$.ajax({
+		type : "DELETE",
+		url : "/countries/deleteland",
+		data : JSON.stringify(country),
+		contentType: "application/json;",
+		success : function(msg) {
+			console.log("Data Deleted: ");
+		}
+	});
 	function add(country) {
 		$.ajax({
 			url : '/countries/addland',
