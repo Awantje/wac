@@ -150,7 +150,6 @@ public class WorldResource {
 	@POST
 	@Path("/addland")
 	@Produces("application/json")
-	@Consumes("application/json")
 	public String addCountry(InputStream is){
 		WorldService service = ServiceProvider.getWorldService();
 		JsonObject object = Json.createReader(is).readObject();
