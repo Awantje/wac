@@ -131,11 +131,10 @@ public class WorldResource {
 		return array.toString();
 	}
 	@DELETE
-	@Path("/deleteland")
-	@Consumes("application/json")
-	public boolean deleteCountryByCode(Country country){
+	@Path("/deleteland/{id}")
+	public boolean deleteCountryByCode(@PathParam("id") int id){
 		WorldService service = ServiceProvider.getWorldService();
-		return service.deleteCountryByCode(country);
+		return service.deleteCountryByCode(id);
 	}
 	@PUT
 	@Path("/updateland")

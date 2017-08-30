@@ -21,8 +21,8 @@ public class WorldService {
 	public Country getCountryByCode(String code) {
 	return dao.findByCode(code);
 }
-	public boolean deleteCountryByCode(Country country){
-		return dao.delete(country);
+	public boolean deleteCountryByCode(int id){
+		return dao.delete(id);
 	}
 	public Country updateCountry(Country country){
 		return dao.update(country);

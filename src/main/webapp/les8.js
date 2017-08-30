@@ -108,17 +108,18 @@ function editcountry(){
 			}
 			}); 
 	}
-	function remove(country) {
-	$.ajax({
-		type : "DELETE",
-		url : "/restservices/countries/deleteland",
-		data : JSON.stringify(country),
-		contentType: "application/json",
-		success : function(msg) {
-			console.log("Data Deleted: ");
+	$("#delete").click(function() {
+		var uri = "/restservices/countries/deleteland/" + landcode;
+		$.ajax(uri, {
+		type: "delete",
+		success: function(response) {
+		$("#response").text("Country deleted!");
+		},
+		error: function(response) {
+		$("#response").text("Could not delete country!");
 		}
-	});
-	}
+		});
+		});
 	function add(country) {
 		data = JSON.stringify(country);
 		$.post("/restservices/countries/addland", data, function(response) {

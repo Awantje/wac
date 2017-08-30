@@ -113,11 +113,11 @@ public class CountryDAO extends BaseDAO {
 		}
 	}
 
-	public boolean delete(Country country) {
+	public boolean delete(int id) {
 		try (Connection conn = super.getConnection()) {
 			final String DELETE = "DELETE FROM \"country\" WHERE code2=?";
 			PreparedStatement ps = conn.prepareStatement(DELETE);
-			ps.setString(1, country.getCode());
+			ps.setInt(1, id);
 			return true;
 		} catch (SQLException e) {
 			// e.printStackTrace();
