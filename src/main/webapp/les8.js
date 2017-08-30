@@ -75,7 +75,7 @@ function editcountry(){
 	console.log("editcountry")
 	var codete = $("CODEE").attr('code');
 	var iso3e = $("ISO3E").attr('Iso3');
-	var Naamne = $("#Editlandnaam").text();
+	var Naamne = $("#Editlandnaam").val();
 	var Conte = $("#CONTE").val();
 	var Stade = $("#STADE").val();
 	var Regioe = $("#REGIOE").val();
